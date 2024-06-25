@@ -1,8 +1,12 @@
 package edu.escuelaing.arsw.ASE.app;
 
+/**
+ * CalculatorModel class that represents the model of a calculator.
+ * This class uses the Singleton pattern to ensure that only one instance
+ * of the CalculatorModel exists.
+ */
 public class CalculatorModel {
     private double number1;
-    private double number2;
     private String operation;
     private double result;
 
@@ -14,7 +18,12 @@ public class CalculatorModel {
         this.result = 0;
     }
 
-    // Static method to get the single instance of the class
+    /**
+     * Static method to get the single instance of the CalculatorModel class.
+     * This method is synchronized to ensure thread safety.
+     *
+     * @return the single instance of CalculatorModel
+     */
     public static synchronized CalculatorModel getInstance() {
         if (instance == null) {
             instance = new CalculatorModel();
@@ -31,13 +40,6 @@ public class CalculatorModel {
         this.number1 = number1;
     }
 
-    public double getNumber2() {
-        return number2;
-    }
-
-    public void setNumber2(double number2) {
-        this.number2 = number2;
-    }
 
     public String getOperation() {
         return operation;
@@ -55,7 +57,4 @@ public class CalculatorModel {
         this.result = result;
     }
 
-    public void clearResult() {
-        this.result = 0;
-    }
 }
